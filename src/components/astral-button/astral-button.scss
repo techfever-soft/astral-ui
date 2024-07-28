@@ -1,0 +1,112 @@
+@use '@material/ripple';
+@use '../../global/scss/functions/check-contrast.scss' as *;
+
+button {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  font-family: var(--astral-primary-font);
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bolder;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+
+  @include ripple.surface;
+  @include ripple.radius-bounded;
+  @include ripple.states-base-color(black);
+  @include ripple.states-opacities(
+    (
+      hover: 0.1,
+      focus: 0.3,
+      press: 0.4,
+    )
+  );
+
+  &[color='primary'] {
+    background: var(--astral-primary-color);
+    color: var(--astral-primary-contrast-color);
+    @include ripple.states-base-color(var(--astral-primary-contrast-color));
+  }
+  &[color='secondary'] {
+    background: var(--astral-secondary-color);
+    color: var(--astral-secondary-contrast-color);
+    @include ripple.states-base-color(var(--astral-secondary-contrast-color));
+  }
+  &[color='success'] {
+    background: var(--astral-success-color);
+    color: var(--astral-success-contrast-color);
+    @include ripple.states-base-color(var(--astral-success-contrast-color));
+  }
+  &[color='warning'] {
+    background: var(--astral-warning-color);
+    color: var(--astral-warning-contrast-color);
+    @include ripple.states-base-color(var(--astral-warning-contrast-color));
+  }
+
+  &[stroked] {
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    &[color='primary'] {
+      color: var(--astral-primary-color);
+      border: 1px solid var(--astral-primary-color);
+      @include ripple.states-base-color(var(--astral-primary-color));
+    }
+    &[color='secondary'] {
+      color: var(--astral-secondary-color);
+      border: 1px solid var(--astral-secondary-color);
+      @include ripple.states-base-color(var(--astral-secondary-color));
+    }
+    &[color='success'] {
+      color: var(--astral-success-color);
+      border: 1px solid var(--astral-success-color);
+      @include ripple.states-base-color(var(--astral-success-color));
+    }
+    &[color='warning'] {
+      color: var(--astral-warning-color);
+      border: 1px solid var(--astral-warning-color);
+      @include ripple.states-base-color(var(--astral-warning-color));
+    }
+  }
+
+  &[raised] {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    &:active {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &[fab] {
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &[extendedfab] {
+    border-radius: 15px;
+    min-width: 50px;
+    height: 50px;
+    padding: 12.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i,
+    svg,
+    astral-icon {
+      margin-right: 10px;
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

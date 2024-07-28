@@ -1,0 +1,24 @@
+@use './functions/check-contrast.scss' as *;
+@import '../../assets/material-components-web.min.css';
+
+:root {
+  --astral-primary-color: #6200ea;
+  --astral-primary-contrast-color: #fff;
+  --astral-secondary-color: #03dac6;
+  --astral-secondary-contrast-color: #000;
+  --astral-success-color: #00c853;
+  --astral-success-contrast-color: #fff;
+  --astral-warning-color: #ff4141;
+  --astral-warning-contrast-color: #fff;
+
+  --astral-background-color: #ffffff;
+  --astral-text-color: #000000;
+
+  --astral-primary-font: 'K2D', sans-serif;
+  --astral-secondary-font: 'Merriweather', serif;
+}
+
+body {
+  background-color: var(--astral-background-color);
+  color: var(--astral-text-color);
+}

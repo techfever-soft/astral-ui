@@ -5,10 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/build/astralui.css" />
     <script type="module" src="/build/astralui.esm.js"></script>
     <script nomodule src="/build/astralui.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <fieldset>
+      <legend>Buttons</legend>
+
+      <astral-button color="transparent">Transparent</astral-button>
+      <astral-button color="primary">Primary</astral-button>
+      <astral-button color="secondary">Secondary</astral-button>
+      <astral-button color="success">Success</astral-button>
+      <astral-button color="warning">Warning</astral-button>
+      <astral-button raised>Raised</astral-button>
+      <astral-button fab color="primary">
+        <i class="material-icons">menu</i>
+      </astral-button>
+      <astral-button extendedfab raised color="secondary">
+        <i class="material-icons">menu_open</i>
+        Extended fab
+      </astral-button>
+      <astral-button stroked>Stroked</astral-button>
+      <astral-button disabled>Disabled</astral-button>
+    </fieldset>
+
+    <!-- 
+  TODO Accordion implementation
+    <fieldset>
+      <legend>Accordion</legend>
+
+      <astral-accordion color="primary">
+        <astral-accordion-panel>
+          <div slot="header">Header 1</div>
+          <div slot="content">
+            <p>This is the content for panel 1.</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel stroked>
+          <div slot="header">Header 2</div>
+          <div slot="content">
+            <p>This is the content for panel 2.</p>
+          </div>
+        </astral-accordion-panel>
+      </astral-accordion>
+    </fieldset> -->
   </body>
 </html>

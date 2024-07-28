@@ -1,0 +1,30 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+
+  &.stroked {
+    .header {
+      border: 1px solid var(--astral-primary-color);
+    }
+  }
+
+  &.opened {
+    .header {
+      background-color: var(--astral-primary-color);
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .header {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .content {
+    height: 0;
+    overflow: hidden;
+  }
+}

@@ -5,57 +5,87 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AstralThemeColor } from "./utils/types/theme.types";
+export { AstralThemeColor } from "./utils/types/theme.types";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface AstralAccordion {
+        "color": AstralThemeColor;
+        "multiple": boolean;
+        "openedIndex": number;
+    }
+    interface AstralAccordionPanel {
+        "index": number;
+        "opened": boolean;
+        "raised": boolean;
+        "stroked": boolean;
+    }
+    interface AstralButton {
+        "color": AstralThemeColor;
+        "disabled": boolean;
+        "extendedfab": boolean;
+        "fab": boolean;
+        "raised": boolean;
+        "stroked": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLAstralAccordionElement extends Components.AstralAccordion, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLAstralAccordionElement: {
+        prototype: HTMLAstralAccordionElement;
+        new (): HTMLAstralAccordionElement;
+    };
+    interface HTMLAstralAccordionPanelElement extends Components.AstralAccordionPanel, HTMLStencilElement {
+    }
+    var HTMLAstralAccordionPanelElement: {
+        prototype: HTMLAstralAccordionPanelElement;
+        new (): HTMLAstralAccordionPanelElement;
+    };
+    interface HTMLAstralButtonElement extends Components.AstralButton, HTMLStencilElement {
+    }
+    var HTMLAstralButtonElement: {
+        prototype: HTMLAstralButtonElement;
+        new (): HTMLAstralButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "astral-accordion": HTMLAstralAccordionElement;
+        "astral-accordion-panel": HTMLAstralAccordionPanelElement;
+        "astral-button": HTMLAstralButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface AstralAccordion {
+        "color"?: AstralThemeColor;
+        "multiple"?: boolean;
+        "openedIndex"?: number;
+    }
+    interface AstralAccordionPanel {
+        "index"?: number;
+        "opened"?: boolean;
+        "raised"?: boolean;
+        "stroked"?: boolean;
+    }
+    interface AstralButton {
+        "color"?: AstralThemeColor;
+        "disabled"?: boolean;
+        "extendedfab"?: boolean;
+        "fab"?: boolean;
+        "raised"?: boolean;
+        "stroked"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "astral-accordion": AstralAccordion;
+        "astral-accordion-panel": AstralAccordionPanel;
+        "astral-button": AstralButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "astral-accordion": LocalJSX.AstralAccordion & JSXBase.HTMLAttributes<HTMLAstralAccordionElement>;
+            "astral-accordion-panel": LocalJSX.AstralAccordionPanel & JSXBase.HTMLAttributes<HTMLAstralAccordionPanelElement>;
+            "astral-button": LocalJSX.AstralButton & JSXBase.HTMLAttributes<HTMLAstralButtonElement>;
         }
     }
 }
