@@ -27,6 +27,10 @@ export namespace Components {
         "raised": boolean;
         "stroked": boolean;
     }
+    interface AstralPane {
+        "raised": boolean;
+        "stroked": boolean;
+    }
 }
 declare global {
     interface HTMLAstralAccordionElement extends Components.AstralAccordion, HTMLStencilElement {
@@ -47,10 +51,17 @@ declare global {
         prototype: HTMLAstralButtonElement;
         new (): HTMLAstralButtonElement;
     };
+    interface HTMLAstralPaneElement extends Components.AstralPane, HTMLStencilElement {
+    }
+    var HTMLAstralPaneElement: {
+        prototype: HTMLAstralPaneElement;
+        new (): HTMLAstralPaneElement;
+    };
     interface HTMLElementTagNameMap {
         "astral-accordion": HTMLAstralAccordionElement;
         "astral-accordion-panel": HTMLAstralAccordionPanelElement;
         "astral-button": HTMLAstralButtonElement;
+        "astral-pane": HTMLAstralPaneElement;
     }
 }
 declare namespace LocalJSX {
@@ -73,10 +84,15 @@ declare namespace LocalJSX {
         "raised"?: boolean;
         "stroked"?: boolean;
     }
+    interface AstralPane {
+        "raised"?: boolean;
+        "stroked"?: boolean;
+    }
     interface IntrinsicElements {
         "astral-accordion": AstralAccordion;
         "astral-accordion-panel": AstralAccordionPanel;
         "astral-button": AstralButton;
+        "astral-pane": AstralPane;
     }
 }
 export { LocalJSX as JSX };
@@ -86,6 +102,7 @@ declare module "@stencil/core" {
             "astral-accordion": LocalJSX.AstralAccordion & JSXBase.HTMLAttributes<HTMLAstralAccordionElement>;
             "astral-accordion-panel": LocalJSX.AstralAccordionPanel & JSXBase.HTMLAttributes<HTMLAstralAccordionPanelElement>;
             "astral-button": LocalJSX.AstralButton & JSXBase.HTMLAttributes<HTMLAstralButtonElement>;
+            "astral-pane": LocalJSX.AstralPane & JSXBase.HTMLAttributes<HTMLAstralPaneElement>;
         }
     }
 }

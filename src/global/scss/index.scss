@@ -11,14 +11,42 @@
   --astral-warning-color: #ff4141;
   --astral-warning-contrast-color: #fff;
 
-  --astral-background-color: #ffffff;
-  --astral-text-color: #000000;
+  --astral-text-color-light: #212121;
+  --astral-background-color-light: #efefef;
+  --astral-text-color-dark: #fff;
+  --astral-background-color-dark: #212121;
 
   --astral-primary-font: 'K2D', sans-serif;
   --astral-secondary-font: 'Merriweather', serif;
+
+  &[data-theme='dark'] {
+    --astral-text-color: var(--astral-text-color-dark);
+    --astral-background-color: var(--astral-background-color-dark);
+  }
+
+  &[data-theme='light'] {
+    --astral-text-color: var(--astral-text-color-light);
+    --astral-background-color: var(--astral-background-color-light);
+  }
 }
 
 body {
-  background-color: var(--astral-background-color);
   color: var(--astral-text-color);
+  background: var(--astral-background-color);
+}
+
+fieldset {
+  margin-bottom: 15px;
+  legend {
+    padding: 0 10px;
+    font-family: var(--astral-primary-font);
+  }
+}
+
+
+.flex-container {
+  display: flex;
+  &.column {
+    flex-direction: column;
+  }
 }

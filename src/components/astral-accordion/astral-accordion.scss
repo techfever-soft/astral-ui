@@ -1,4 +1,66 @@
 astral-accordion {
   display: flex;
   flex-direction: column;
+
+  &[color='primary'] {
+    .panel {
+      &.opened {
+        .header {
+          background-color: var(--astral-primary-color);
+          color: var(--astral-primary-contrast-color);
+        }
+      }
+      .header {
+        &:hover {
+          background: var(--astral-primary-color);
+          color: var(--astral-primary-contrast-color);
+        }
+      }
+    }
+  }
+  &[color='secondary'] {
+    &.opened {
+      .header {
+        background-color: var(--astral-secondary-color);
+        color: var(--astral-secondary-contrast-color);
+      }
+    }
+    .panel {
+      .header {
+        &:hover {
+          background: var(--astral-secondary-color);
+        }
+      }
+    }
+  }
+  &[color='success'] {
+    &.opened {
+      .header {
+        background-color: var(--astral-success-color);
+        color: var(--astral-success-contrast-color);
+      }
+    }
+    .panel {
+      .header {
+        &:hover {
+          background: var(--astral-success-color);
+        }
+      }
+    }
+  }
+  &[color='warning'] {
+    &.opened {
+      .header {
+        background-color: var(--astral-warning-color);
+        color: var(--astral-warning-contrast-color);
+      }
+    }
+    .panel {
+      .header {
+        &:hover {
+          background: var(--astral-warning-color);
+        }
+      }
+    }
+  }
 }

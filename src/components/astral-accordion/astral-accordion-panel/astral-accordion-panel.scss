@@ -8,9 +8,17 @@
     }
   }
 
+  &.raised {
+    .header {
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
+    }
+  }
+
   &.opened {
     .header {
-      background-color: var(--astral-primary-color);
+      .header-icon {
+        transform: rotate(90deg);
+      }
     }
     .content {
       display: flex;
@@ -20,7 +28,22 @@
 
   .header {
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--astral-primary-font);
+    transition: all 0.15s ease-in-out;
+
+    .header-content {
+      display: flex;
+    }
+    .header-spacer {
+      flex: 1;
+    }
+    .header-icon {
+      transition: transform 0.25s ease-in-out;
+    }
   }
 
   .content {

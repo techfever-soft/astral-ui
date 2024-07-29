@@ -1,5 +1,4 @@
 import { Config } from '@stencil/core';
-import { angularOutputTarget } from '@stencil/angular-output-target';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
@@ -12,10 +11,6 @@ export const config: Config = {
     }),
   ],
   outputTargets: [
-    angularOutputTarget({
-      componentCorePackage: 'astralui',
-      directivesProxyFile: '../astral-ui/src/lib/stencil-generated/components.ts',
-    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

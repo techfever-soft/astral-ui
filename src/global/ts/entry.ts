@@ -8,5 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('MDC library is not loaded');
     }
   };
+
+  const link = document.createElement('link');
+  link.href = '/assets/material-components-web.min.css';
+
   document.head.appendChild(script);
+  document.head.appendChild(link);
 });

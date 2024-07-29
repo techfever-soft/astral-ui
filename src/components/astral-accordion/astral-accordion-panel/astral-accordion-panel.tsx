@@ -40,10 +40,16 @@ export class AstralAccordionPanel {
 
   render() {
     return (
-      <Host stroked={this.stroked}>
-        <div class={`panel ${this.stroked ? 'stroked' : ''} ${this.opened ? 'opened' : ''}`}>
+      <Host stroked={this.stroked} raised={this.raised}>
+        <div class={`panel ${this.stroked ? 'stroked' : ''} ${this.raised ? 'raised' : ''} ${this.opened ? 'opened' : ''}`}>
           <div class="header" onClick={this.togglePanel}>
-            <slot name="header"></slot>
+            <div class="header-content">
+              <slot name="header"></slot>
+            </div>
+            <span class="header-spacer"></span>
+            <div class="header-icon">
+              <i class="material-icons">keyboard_arrow_right</i>
+            </div>
           </div>
           <div class="content">
             <slot name="content"></slot>
