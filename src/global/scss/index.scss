@@ -30,6 +30,15 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
 body {
   color: var(--astral-text-color);
   background: var(--astral-background-color);
@@ -42,7 +51,6 @@ fieldset {
     font-family: var(--astral-primary-font);
   }
 }
-
 
 .flex-container {
   display: flex;

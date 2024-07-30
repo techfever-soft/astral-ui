@@ -10,6 +10,11 @@ astral-accordion {
           color: var(--astral-primary-contrast-color);
         }
       }
+      &.stroked {
+        .header {
+          border: 1px solid var(--astral-primary-color);
+        }
+      }
       .header {
         &:hover {
           background: var(--astral-primary-color);
@@ -26,6 +31,11 @@ astral-accordion {
       }
     }
     .panel {
+      &.stroked {
+        .header {
+          border: 1px solid var(--astral-secondary-color);
+        }
+      }
       .header {
         &:hover {
           background: var(--astral-secondary-color);
@@ -41,6 +51,11 @@ astral-accordion {
       }
     }
     .panel {
+      &.stroked {
+        .header {
+          border: 1px solid var(--astral-success-color);
+        }
+      }
       .header {
         &:hover {
           background: var(--astral-success-color);
@@ -56,6 +71,11 @@ astral-accordion {
       }
     }
     .panel {
+      &.stroked {
+        .header {
+          border: 1px solid var(--astral-warning-color);
+        }
+      }
       .header {
         &:hover {
           background: var(--astral-warning-color);

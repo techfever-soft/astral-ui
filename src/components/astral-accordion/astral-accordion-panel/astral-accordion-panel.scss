@@ -2,12 +2,6 @@
   display: flex;
   flex-direction: column;
 
-  &.stroked {
-    .header {
-      border: 1px solid var(--astral-primary-color);
-    }
-  }
-
   &.raised {
     .header {
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
@@ -49,5 +43,9 @@
   .content {
     height: 0;
     overflow: hidden;
+    div[slot='content'] {
+      font-family: var(--astral-primary-font);
+      padding: 15px;
+    }
   }
 }

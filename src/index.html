@@ -51,16 +51,16 @@
       });
 
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
-        root.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'light');
       }
 
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
         if (event.matches) {
-          root.setAttribute('data-theme', 'dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
         } else {
-          root.setAttribute('data-theme', 'light');
+          document.documentElement.setAttribute('data-theme', 'light');
         }
       });
     </script>
@@ -69,22 +69,21 @@
       <legend>Buttons</legend>
 
       <div class="flex-container column">
-
-      <astral-button color="transparent">Transparent</astral-button>
-      <astral-button color="primary">Primary</astral-button>
-      <astral-button color="secondary">Secondary</astral-button>
-      <astral-button color="success">Success</astral-button>
-      <astral-button color="warning">Warning</astral-button>
-      <astral-button raised>Raised</astral-button>
-      <astral-button stroked>Stroked</astral-button>
-      <astral-button fab color="primary">
-        <i class="material-icons">menu</i>
-      </astral-button>
-      <astral-button extendedfab raised color="secondary">
-        <i class="material-icons">menu_open</i>
-        Extended fab
-      </astral-button>
-      <astral-button disabled>Disabled</astral-button>
+        <astral-button color="transparent">Transparent</astral-button>
+        <astral-button color="primary">Primary</astral-button>
+        <astral-button color="secondary">Secondary</astral-button>
+        <astral-button color="success">Success</astral-button>
+        <astral-button color="warning">Warning</astral-button>
+        <astral-button raised>Raised</astral-button>
+        <astral-button stroked>Stroked</astral-button>
+        <astral-button disabled>Disabled</astral-button>
+        <astral-button fab color="primary">
+          <i class="material-icons">menu</i>
+        </astral-button>
+        <astral-button extendedfab raised color="secondary">
+          <i class="material-icons">menu_open</i>
+          Extended fab
+        </astral-button>
       </div>
     </fieldset>
 
@@ -107,10 +106,10 @@
       </astral-pane>
     </fieldset>
 
-    <!-- <fieldset>
+    <fieldset>
       <legend>Accordions</legend>
 
-      <astral-accordion color="primary">
+      <astral-accordion color="secondary">
         <astral-accordion-panel>
           <div slot="header">Transparent panel</div>
           <div slot="content">
@@ -130,6 +129,44 @@
           </div>
         </astral-accordion-panel>
       </astral-accordion>
+    </fieldset>
+
+    <!-- <fieldset>
+      <legend>Breadcrumbs</legend>
+
+      <astral-breadcrumb color="primary">
+        <span slot="separator"> / </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+
+      <br />
+
+      <astral-breadcrumb color="secondary">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+
+      <br/>
+
+      <astral-breadcrumb color="success">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+      
+      <br/>
+
+      <astral-breadcrumb color="warning">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
     </fieldset> -->
   </body>
 </html>

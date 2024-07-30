@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AstralThemeColor } from "./utils/types/theme.types";
+import { AstralThemeColor as AstralThemeColor1 } from "./components";
 export { AstralThemeColor } from "./utils/types/theme.types";
+export { AstralThemeColor as AstralThemeColor1 } from "./components";
 export namespace Components {
     interface AstralAccordion {
         "color": AstralThemeColor;
@@ -18,6 +20,17 @@ export namespace Components {
         "opened": boolean;
         "raised": boolean;
         "stroked": boolean;
+    }
+    interface AstralBreadcrumb {
+        "color": AstralThemeColor1;
+        "separator": string;
+    }
+    interface AstralBreadcrumbItem {
+        "active": boolean;
+        "color"?: AstralThemeColor1;
+        "disabled": boolean;
+        "href"?: string;
+        "separatorContent": string;
     }
     interface AstralButton {
         "color": AstralThemeColor;
@@ -45,6 +58,18 @@ declare global {
         prototype: HTMLAstralAccordionPanelElement;
         new (): HTMLAstralAccordionPanelElement;
     };
+    interface HTMLAstralBreadcrumbElement extends Components.AstralBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLAstralBreadcrumbElement: {
+        prototype: HTMLAstralBreadcrumbElement;
+        new (): HTMLAstralBreadcrumbElement;
+    };
+    interface HTMLAstralBreadcrumbItemElement extends Components.AstralBreadcrumbItem, HTMLStencilElement {
+    }
+    var HTMLAstralBreadcrumbItemElement: {
+        prototype: HTMLAstralBreadcrumbItemElement;
+        new (): HTMLAstralBreadcrumbItemElement;
+    };
     interface HTMLAstralButtonElement extends Components.AstralButton, HTMLStencilElement {
     }
     var HTMLAstralButtonElement: {
@@ -60,6 +85,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "astral-accordion": HTMLAstralAccordionElement;
         "astral-accordion-panel": HTMLAstralAccordionPanelElement;
+        "astral-breadcrumb": HTMLAstralBreadcrumbElement;
+        "astral-breadcrumb-item": HTMLAstralBreadcrumbItemElement;
         "astral-button": HTMLAstralButtonElement;
         "astral-pane": HTMLAstralPaneElement;
     }
@@ -76,6 +103,17 @@ declare namespace LocalJSX {
         "raised"?: boolean;
         "stroked"?: boolean;
     }
+    interface AstralBreadcrumb {
+        "color"?: AstralThemeColor1;
+        "separator"?: string;
+    }
+    interface AstralBreadcrumbItem {
+        "active"?: boolean;
+        "color"?: AstralThemeColor1;
+        "disabled"?: boolean;
+        "href"?: string;
+        "separatorContent"?: string;
+    }
     interface AstralButton {
         "color"?: AstralThemeColor;
         "disabled"?: boolean;
@@ -91,6 +129,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "astral-accordion": AstralAccordion;
         "astral-accordion-panel": AstralAccordionPanel;
+        "astral-breadcrumb": AstralBreadcrumb;
+        "astral-breadcrumb-item": AstralBreadcrumbItem;
         "astral-button": AstralButton;
         "astral-pane": AstralPane;
     }
@@ -101,6 +141,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "astral-accordion": LocalJSX.AstralAccordion & JSXBase.HTMLAttributes<HTMLAstralAccordionElement>;
             "astral-accordion-panel": LocalJSX.AstralAccordionPanel & JSXBase.HTMLAttributes<HTMLAstralAccordionPanelElement>;
+            "astral-breadcrumb": LocalJSX.AstralBreadcrumb & JSXBase.HTMLAttributes<HTMLAstralBreadcrumbElement>;
+            "astral-breadcrumb-item": LocalJSX.AstralBreadcrumbItem & JSXBase.HTMLAttributes<HTMLAstralBreadcrumbItemElement>;
             "astral-button": LocalJSX.AstralButton & JSXBase.HTMLAttributes<HTMLAstralButtonElement>;
             "astral-pane": LocalJSX.AstralPane & JSXBase.HTMLAttributes<HTMLAstralPaneElement>;
         }
