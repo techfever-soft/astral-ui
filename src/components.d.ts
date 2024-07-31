@@ -40,6 +40,19 @@ export namespace Components {
         "raised": boolean;
         "stroked": boolean;
     }
+    interface AstralCheckbox {
+        "checked": boolean;
+        "color": AstralThemeColor1;
+        "indeterminate": boolean;
+    }
+    interface AstralDivider {
+    }
+    interface AstralIcon {
+        "color": AstralThemeColor1;
+        "fontSet": 'material' | 'font-awesome';
+        "name": string;
+        "size": string;
+    }
     interface AstralPane {
         "raised": boolean;
         "stroked": boolean;
@@ -76,6 +89,24 @@ declare global {
         prototype: HTMLAstralButtonElement;
         new (): HTMLAstralButtonElement;
     };
+    interface HTMLAstralCheckboxElement extends Components.AstralCheckbox, HTMLStencilElement {
+    }
+    var HTMLAstralCheckboxElement: {
+        prototype: HTMLAstralCheckboxElement;
+        new (): HTMLAstralCheckboxElement;
+    };
+    interface HTMLAstralDividerElement extends Components.AstralDivider, HTMLStencilElement {
+    }
+    var HTMLAstralDividerElement: {
+        prototype: HTMLAstralDividerElement;
+        new (): HTMLAstralDividerElement;
+    };
+    interface HTMLAstralIconElement extends Components.AstralIcon, HTMLStencilElement {
+    }
+    var HTMLAstralIconElement: {
+        prototype: HTMLAstralIconElement;
+        new (): HTMLAstralIconElement;
+    };
     interface HTMLAstralPaneElement extends Components.AstralPane, HTMLStencilElement {
     }
     var HTMLAstralPaneElement: {
@@ -88,6 +119,9 @@ declare global {
         "astral-breadcrumb": HTMLAstralBreadcrumbElement;
         "astral-breadcrumb-item": HTMLAstralBreadcrumbItemElement;
         "astral-button": HTMLAstralButtonElement;
+        "astral-checkbox": HTMLAstralCheckboxElement;
+        "astral-divider": HTMLAstralDividerElement;
+        "astral-icon": HTMLAstralIconElement;
         "astral-pane": HTMLAstralPaneElement;
     }
 }
@@ -122,6 +156,19 @@ declare namespace LocalJSX {
         "raised"?: boolean;
         "stroked"?: boolean;
     }
+    interface AstralCheckbox {
+        "checked"?: boolean;
+        "color"?: AstralThemeColor1;
+        "indeterminate"?: boolean;
+    }
+    interface AstralDivider {
+    }
+    interface AstralIcon {
+        "color"?: AstralThemeColor1;
+        "fontSet"?: 'material' | 'font-awesome';
+        "name"?: string;
+        "size"?: string;
+    }
     interface AstralPane {
         "raised"?: boolean;
         "stroked"?: boolean;
@@ -132,6 +179,9 @@ declare namespace LocalJSX {
         "astral-breadcrumb": AstralBreadcrumb;
         "astral-breadcrumb-item": AstralBreadcrumbItem;
         "astral-button": AstralButton;
+        "astral-checkbox": AstralCheckbox;
+        "astral-divider": AstralDivider;
+        "astral-icon": AstralIcon;
         "astral-pane": AstralPane;
     }
 }
@@ -144,6 +194,9 @@ declare module "@stencil/core" {
             "astral-breadcrumb": LocalJSX.AstralBreadcrumb & JSXBase.HTMLAttributes<HTMLAstralBreadcrumbElement>;
             "astral-breadcrumb-item": LocalJSX.AstralBreadcrumbItem & JSXBase.HTMLAttributes<HTMLAstralBreadcrumbItemElement>;
             "astral-button": LocalJSX.AstralButton & JSXBase.HTMLAttributes<HTMLAstralButtonElement>;
+            "astral-checkbox": LocalJSX.AstralCheckbox & JSXBase.HTMLAttributes<HTMLAstralCheckboxElement>;
+            "astral-divider": LocalJSX.AstralDivider & JSXBase.HTMLAttributes<HTMLAstralDividerElement>;
+            "astral-icon": LocalJSX.AstralIcon & JSXBase.HTMLAttributes<HTMLAstralIconElement>;
             "astral-pane": LocalJSX.AstralPane & JSXBase.HTMLAttributes<HTMLAstralPaneElement>;
         }
     }

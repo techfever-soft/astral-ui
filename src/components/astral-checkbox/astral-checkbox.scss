@@ -1,0 +1,141 @@
+@use '@material/ripple';
+
+astral-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+
+  .checkbox-container {
+    display: inline-block;
+    position: relative;
+    width: var(--astral-checkbox-size);
+    height: var(--astral-checkbox-size);
+  }
+
+  .checkbox-label {
+    padding-left: 15px;
+    font-family: var(--astral-primary-font);
+    color: var(--astral-text-color);
+    opacity: 0.87;
+  }
+
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkbox-custom {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--astral-checkbox-size);
+    width: var(--astral-checkbox-size);
+    border: 2px solid var(--astral-checkbox-unchecked-border);
+    border-radius: var(--astral-checkbox-border-radius);
+    transition: background-color var(--astral-checkbox-transition-duration), border-color var(--astral-checkbox-transition-duration);
+  }
+
+  .checkbox-input:checked ~ .checkbox-custom {
+    background-color: var(--astral-checkbox-checked-background);
+    border-color: var(--astral-checkbox-checked-border);
+  }
+
+  .checkbox-custom i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: var(--astral-checkbox-checkmark-color);
+    opacity: 0;
+    transition: opacity var(--astral-checkbox-transition-duration);
+  }
+
+  .checkbox-input:checked ~ .checkbox-custom i {
+    opacity: 1;
+  }
+
+  .checkbox-primary .checkbox-custom {
+    --astral-checkbox-checked-background: var(--astral-primary-color);
+    --astral-checkbox-checked-border: var(--astral-primary-color);
+
+    @include ripple.surface;
+    @include ripple.radius-bounded;
+    @include ripple.states-base-color(var(--astral-primary-color));
+    @include ripple.states-opacities(
+      (
+        hover: 0.1,
+        focus: 0.3,
+        press: 0.4,
+      )
+    );
+
+    i {
+      color: var(--astral-primary-contrast-color);
+    }
+  }
+
+  .checkbox-secondary .checkbox-custom {
+    --astral-checkbox-checked-background: var(--astral-secondary-color);
+    --astral-checkbox-checked-border: var(--astral-secondary-color);
+
+    @include ripple.surface;
+    @include ripple.radius-bounded;
+    @include ripple.states-base-color(var(--astral-secondary-color));
+    @include ripple.states-opacities(
+      (
+        hover: 0.1,
+        focus: 0.3,
+        press: 0.4,
+      )
+    );
+
+    i {
+      color: var(--astral-secondary-contrast-color);
+    }
+  }
+
+  .checkbox-success .checkbox-custom {
+    --astral-checkbox-checked-background: var(--astral-success-color);
+    --astral-checkbox-checked-border: var(--astral-success-color);
+
+    @include ripple.surface;
+    @include ripple.radius-bounded;
+    @include ripple.states-base-color(var(--astral-success-color));
+    @include ripple.states-opacities(
+      (
+        hover: 0.1,
+        focus: 0.3,
+        press: 0.4,
+      )
+    );
+
+    i {
+      color: var(--astral-success-contrast-color);
+    }
+  }
+
+  .checkbox-warning .checkbox-custom {
+    --astral-checkbox-checked-background: var(--astral-warning-color);
+    --astral-checkbox-checked-border: var(--astral-warning-color);
+
+    @include ripple.surface;
+    @include ripple.radius-bounded;
+    @include ripple.states-base-color(var(--astral-warning-color));
+    @include ripple.states-opacities(
+      (
+        hover: 0.1,
+        focus: 0.3,
+        press: 0.4,
+      )
+    );
+
+    i {
+      color: var(--astral-warning-contrast-color);
+    }
+  }
+}

@@ -15,6 +15,37 @@
     <link rel="stylesheet" href="/build/astralui.css" />
     <script type="module" src="/build/astralui.esm.js"></script>
     <script nomodule src="/build/astralui.js"></script>
+
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p {
+        margin: 0;
+      }
+
+      body {
+        color: var(--astral-text-color);
+        background: var(--astral-background-color);
+      }
+
+      fieldset {
+        margin-bottom: 15px;
+      }
+      fieldset legend {
+        padding: 0 10px;
+        font-family: var(--astral-primary-font);
+      }
+
+      .flex-container {
+        display: flex;
+      }
+      .flex-container.column {
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
     <astral-button id="toggle-theme-button">
@@ -109,6 +140,27 @@
     <fieldset>
       <legend>Accordions</legend>
 
+      <astral-accordion color="primary">
+        <astral-accordion-panel>
+          <div slot="header">Transparent panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel raised>
+          <div slot="header">Raised panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel stroked>
+          <div slot="header">Stroked panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+      </astral-accordion>
+
       <astral-accordion color="secondary">
         <astral-accordion-panel>
           <div slot="header">Transparent panel</div>
@@ -131,7 +183,7 @@
       </astral-accordion>
     </fieldset>
 
-    <!-- <fieldset>
+    <fieldset>
       <legend>Breadcrumbs</legend>
 
       <astral-breadcrumb color="primary">
@@ -150,7 +202,7 @@
         <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
       </astral-breadcrumb>
 
-      <br/>
+      <br />
 
       <astral-breadcrumb color="success">
         <span slot="separator"> &gt; </span>
@@ -158,8 +210,8 @@
         <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
         <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
       </astral-breadcrumb>
-      
-      <br/>
+
+      <br />
 
       <astral-breadcrumb color="warning">
         <span slot="separator"> &gt; </span>
@@ -167,6 +219,42 @@
         <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
         <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
       </astral-breadcrumb>
+    </fieldset>
+
+    <fieldset>
+      <legend>Checkboxes</legend>
+
+      <astral-checkbox color="primary" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="secondary" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="success" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="warning" checked>Label for checkbox</astral-checkbox>
+      <br />
+      <astral-checkbox color="primary" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="secondary" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="success" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="warning" checked indeterminate>Label for checkbox</astral-checkbox>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dividers</legend>
+
+      <astral-divider></astral-divider>
+      <br />
+      <astral-divider vertical></astral-divider>
+    </fieldset>
+
+    <!-- <fieldset>
+      <legend>Icons</legend>
+
+      <astral-icon name="category"></astral-icon>
+    </fieldset>
+
+    <fieldset>
+      <legend>Modals</legend>
+
+      <astral-modal>
+        <astral-modal-content> test </astral-modal-content>
+      </astral-modal>
     </fieldset> -->
   </body>
 </html>

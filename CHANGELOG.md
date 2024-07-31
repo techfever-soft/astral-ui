@@ -4,6 +4,12 @@
 
 Following Material Design 3 specs
 
+### Version 0.0.3
+- Added components
+  - Breadcrumb
+  - Checkboxes
+  - Dividers
+
 ### Version 0.0.2
 - Added components
   - Accordion

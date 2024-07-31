@@ -13,7 +13,7 @@ Following Material Design 3 specs
 
 ## Form Components
 - [ ] Input
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Radio Button
 - [ ] Select
 - [ ] Switch
@@ -70,7 +70,7 @@ Following Material Design 3 specs
 - [ ] Audio
 
 ## Other Components
-- [ ] Breadcrumb
+- [x] Breadcrumb
 - [ ] Rating
 - [ ] Carousel
 - [ ] Tooltip

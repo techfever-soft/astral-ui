@@ -1,7 +1,10 @@
 @use './functions/check-contrast.scss' as *;
+
+// Using full Material Components CSS
 @import '../../assets/material-components-web.min.css';
 
 :root {
+  // Theme configuration
   --astral-primary-color: #6200ea;
   --astral-primary-contrast-color: #fff;
   --astral-secondary-color: #03dac6;
@@ -19,6 +22,16 @@
   --astral-primary-font: 'K2D', sans-serif;
   --astral-secondary-font: 'Merriweather', serif;
 
+  // Checkbox variables
+  --astral-checkbox-unchecked-background: #fff;
+  --astral-checkbox-checked-background: var(--astral-primary-color);
+  --astral-checkbox-unchecked-border: var(--astral-text-color, rgba(0, 0, 0, 0.54));
+  --astral-checkbox-checked-border: var(--astral-primary-color);
+  --astral-checkbox-checkmark-color: #fff;
+  --astral-checkbox-size: 20px;
+  --astral-checkbox-transition-duration: 0.3s;
+  --astral-checkbox-border-radius: 4px;
+
   &[data-theme='dark'] {
     --astral-text-color: var(--astral-text-color-dark);
     --astral-background-color: var(--astral-background-color-dark);
@@ -27,34 +40,5 @@
   &[data-theme='light'] {
     --astral-text-color: var(--astral-text-color-light);
     --astral-background-color: var(--astral-background-color-light);
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  margin: 0;
-}
-
-body {
-  color: var(--astral-text-color);
-  background: var(--astral-background-color);
-}
-
-fieldset {
-  margin-bottom: 15px;
-  legend {
-    padding: 0 10px;
-    font-family: var(--astral-primary-font);
-  }
-}
-
-.flex-container {
-  display: flex;
-  &.column {
-    flex-direction: column;
   }
 }

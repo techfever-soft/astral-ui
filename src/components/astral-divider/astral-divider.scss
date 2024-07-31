@@ -1,0 +1,22 @@
+astral-divider {
+  &::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--astral-text-color);
+    opacity: 0.87;
+  }
+
+  &[vertical] {
+    &::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      min-height: 100px;
+      background: var(--astral-text-color);
+      opacity: 0.87;
+    }
+  }
+}
