@@ -1,44 +1,38 @@
 @use './functions/check-contrast.scss' as *;
+@use './functions/rgb.scss' as *;
 
 // Using full Material Components CSS
 @import '../../assets/material-components-web.min.css';
 
 :root {
-  // Theme configuration
-  --astral-primary-color: #6200ea;
-  --astral-primary-contrast-color: #fff;
-  --astral-secondary-color: #03dac6;
-  --astral-secondary-contrast-color: #000;
-  --astral-success-color: #00c853;
-  --astral-success-contrast-color: #fff;
-  --astral-warning-color: #ff4141;
-  --astral-warning-contrast-color: #fff;
-
-  --astral-text-color-light: #212121;
-  --astral-background-color-light: #efefef;
-  --astral-text-color-dark: #fff;
-  --astral-background-color-dark: #212121;
-
+  /**
+  * ANCHOR Defined by the user
+  */
   --astral-primary-font: 'K2D', sans-serif;
   --astral-secondary-font: 'Merriweather', serif;
 
-  // Checkbox variables
-  --astral-checkbox-unchecked-background: #fff;
-  --astral-checkbox-checked-background: var(--astral-primary-color);
-  --astral-checkbox-unchecked-border: var(--astral-text-color, rgba(0, 0, 0, 0.54));
-  --astral-checkbox-checked-border: var(--astral-primary-color);
-  --astral-checkbox-checkmark-color: #fff;
-  --astral-checkbox-size: 20px;
-  --astral-checkbox-transition-duration: 0.3s;
-  --astral-checkbox-border-radius: 4px;
+  @include set-color-variable('#6200ea', --astral-primary-color);
+  @include set-color-variable('#ffffff', --astral-primary-contrast-color);
+  @include set-color-variable('#03dac6', --astral-secondary-color);
+  @include set-color-variable('#212121', --astral-secondary-contrast-color);
+  @include set-color-variable('#00c853', --astral-success-color);
+  @include set-color-variable('#ffffff', --astral-success-contrast-color);
+  @include set-color-variable('#ff4141', --astral-warning-color);
+  @include set-color-variable('#ffffff', --astral-warning-contrast-color);
+
+  @include set-color-variable('#212121', --astral-text-color-light);
+  @include set-color-variable('#efefef', --astral-background-color-light);
+  @include set-color-variable('#ffffff', --astral-text-color-dark);
+  @include set-color-variable('#212121', --astral-background-color-dark);
 
   &[data-theme='dark'] {
-    --astral-text-color: var(--astral-text-color-dark);
-    --astral-background-color: var(--astral-background-color-dark);
+    --astral-text-color: rgba(var(--astral-text-color-dark));
+    --astral-background-color: rgba(var(--astral-background-color-dark));
   }
 
   &[data-theme='light'] {
-    --astral-text-color: var(--astral-text-color-light);
-    --astral-background-color: var(--astral-background-color-light);
+    --astral-text-color: rgba(var(--astral-text-color-light));
+    --astral-background-color: rgba(var(--astral-background-color-light));
   }
 }
+

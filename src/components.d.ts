@@ -53,6 +53,9 @@ export namespace Components {
         "name": string;
         "size": string;
     }
+    interface AstralModal {
+        "modalTitle": string;
+    }
     interface AstralPane {
         "raised": boolean;
         "stroked": boolean;
@@ -107,6 +110,12 @@ declare global {
         prototype: HTMLAstralIconElement;
         new (): HTMLAstralIconElement;
     };
+    interface HTMLAstralModalElement extends Components.AstralModal, HTMLStencilElement {
+    }
+    var HTMLAstralModalElement: {
+        prototype: HTMLAstralModalElement;
+        new (): HTMLAstralModalElement;
+    };
     interface HTMLAstralPaneElement extends Components.AstralPane, HTMLStencilElement {
     }
     var HTMLAstralPaneElement: {
@@ -122,6 +131,7 @@ declare global {
         "astral-checkbox": HTMLAstralCheckboxElement;
         "astral-divider": HTMLAstralDividerElement;
         "astral-icon": HTMLAstralIconElement;
+        "astral-modal": HTMLAstralModalElement;
         "astral-pane": HTMLAstralPaneElement;
     }
 }
@@ -169,6 +179,9 @@ declare namespace LocalJSX {
         "name"?: string;
         "size"?: string;
     }
+    interface AstralModal {
+        "modalTitle"?: string;
+    }
     interface AstralPane {
         "raised"?: boolean;
         "stroked"?: boolean;
@@ -182,6 +195,7 @@ declare namespace LocalJSX {
         "astral-checkbox": AstralCheckbox;
         "astral-divider": AstralDivider;
         "astral-icon": AstralIcon;
+        "astral-modal": AstralModal;
         "astral-pane": AstralPane;
     }
 }
@@ -197,6 +211,7 @@ declare module "@stencil/core" {
             "astral-checkbox": LocalJSX.AstralCheckbox & JSXBase.HTMLAttributes<HTMLAstralCheckboxElement>;
             "astral-divider": LocalJSX.AstralDivider & JSXBase.HTMLAttributes<HTMLAstralDividerElement>;
             "astral-icon": LocalJSX.AstralIcon & JSXBase.HTMLAttributes<HTMLAstralIconElement>;
+            "astral-modal": LocalJSX.AstralModal & JSXBase.HTMLAttributes<HTMLAstralModalElement>;
             "astral-pane": LocalJSX.AstralPane & JSXBase.HTMLAttributes<HTMLAstralPaneElement>;
         }
     }

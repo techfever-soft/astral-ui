@@ -12,9 +12,9 @@ Following Material Design 3 specs
 - Extensible
 - Supports dark/light mode
 
-
-
-## [DEMO & DOCUMENTATION](https://astral-ui.dev)
+#### [CODESANDBOX (SOON)]() 
+#### [CHANGELOG](https://github.com/techfever-soft/astral-ui/blob/main/CHANGELOG.md)
+#### [DEMO & DOCUMENTATION](https://astral-ui.dev)
 
 ### Components
 
@@ -23,6 +23,7 @@ Following Material Design 3 specs
 - [x] Accordions
 - [x] Breadcrumbs
 - [x] Checkboxes
+- [ ] Modals
 - [ ] More components coming soon...
 
 See [ROADMAP.md](https://github.com/techfever-soft/astral-ui/blob/main/ROADMAP.md) for more components
@@ -34,15 +35,6 @@ npm install @techfever/astral-ui
 ```
 
 ### Usage
-
-(Optional) If ripples are not working by default, import MDC web components using :
-```html
-<link href="node_modules/@techfever/astral-ui/www/assets/material-components-web.min.css" rel="stylesheet" />
-```
-```html
-<script src="node_modules/@techfever/astral-ui/www/assets/material-components-web.min.js"></script>
-```
-
 
 Define custom elements in your main class :
 ```ts
@@ -60,24 +52,52 @@ NOTE: For Angular users, put in your schemas : `CUSTOM_ELEMENTS_SCHEMA`
 Use the CSS variables to customize your theme :
 
 ```scss
+// Use the Astral UI SCSS functions to set your own color variables
+@use "../node_modules/@techfever/astral-ui/src/global/scss/functions/rgb" as *;
+
+// Import the Web Components CSS for Ripples
+@import "../node_modules/@techfever/astral-ui/src/assets/material-components-web.min.css";
+
 :root {
-  --astral-primary-font: 'K2D', sans-serif;
-  --astral-secondary-font: 'Merriweather', serif;
+  --astral-primary-font: "K2D", sans-serif;
+  --astral-secondary-font: "Merriweather", serif;
 
-  --astral-primary-color: #6200ea;
-  --astral-primary-contrast-color: #fff;
-  --astral-secondary-color: #03dac6;
-  --astral-secondary-contrast-color: #000;
-  --astral-success-color: #00c853;
-  --astral-success-contrast-color: #fff;
-  --astral-warning-color: #ff4141;
-  --astral-warning-contrast-color: #fff;
+  // NOTE: Define your own palette
+  @include set-color-variable("#6200ea", --astral-primary-color);
+  @include set-color-variable("#ffffff", --astral-primary-contrast-color);
+  @include set-color-variable("#03dac6", --astral-secondary-color);
+  @include set-color-variable("#212121", --astral-secondary-contrast-color);
+  @include set-color-variable("#00c853", --astral-success-color);
+  @include set-color-variable("#ffffff", --astral-success-contrast-color);
+  @include set-color-variable("#ff4141", --astral-warning-color);
+  @include set-color-variable("#ffffff", --astral-warning-contrast-color);
 
-  --astral-text-color-light: #212121;
-  --astral-background-color-light: #efefef;
-  --astral-text-color-dark: #fff;
-  --astral-background-color-dark: #212121;
+  @include set-color-variable("#212121", --astral-text-color-light);
+  @include set-color-variable("#efefef", --astral-background-color-light);
+  @include set-color-variable("#ffffff", --astral-text-color-dark);
+  @include set-color-variable("#212121", --astral-background-color-dark);
+
+  // NOTE: For supporting dark/light mode you need to bind variables
+  &[data-theme="dark"] {
+    --astral-text-color: rgba(var(--astral-text-color-dark));
+    --astral-background-color: rgba(var(--astral-background-color-dark));
+  }
+
+  &[data-theme="light"] {
+    --astral-text-color: rgba(var(--astral-text-color-light));
+    --astral-background-color: rgba(var(--astral-background-color-light));
+  }
 }
+
+// NOTE: Use directly the variables of Astral UI in your theme
+
+body {
+  background: var(--astral-background-color);
+  color: var(--astral-text-color);
+}
+
+// ... Your CSS rules here ...
+
 ```
 
 Use it directly in your template :
@@ -86,9 +106,9 @@ Use it directly in your template :
 <astral-button color="primary" stroked>Click me!</astral-button>
 ```
 
-### Dark / Light mode
+### Dark / Light mode with JS/TS
 AstralUI supports dark and light modes. 
-You can put the attribute `data-theme` to dark for example in the root `html` tag (documentElement). 
+You can put the attribute `data-theme` to "dark" or "light" in the root `html` tag (document.documentElement). 
 
 You can define the initial theme based on the system's preference:
 

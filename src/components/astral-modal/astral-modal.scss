@@ -1,0 +1,18 @@
+astral-modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: rgba(var(--astral-text-color), 0.65);
+  display: flex;
+  justify-content: center;
+  .astral-modal-container {
+    justify-self: center;
+    align-self: center;
+    display: block;
+    border-radius: 10px;
+    padding: 15px;
+    background: #262626;
+    color: var(--astral-text-color);
+  }
+}

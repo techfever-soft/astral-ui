@@ -4,6 +4,9 @@
 
 Following Material Design 3 specs
 
+### Version 0.0.4
+- Patched CSS variables into a reusable SCSS mixin that transforms your own palette (in HEX) into an rgb map, that can be used to opacify colors of your theme more easily
+
 ### Version 0.0.3
 - Added components
   - Breadcrumb

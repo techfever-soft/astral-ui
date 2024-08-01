@@ -6,79 +6,79 @@ astral-accordion {
     .panel {
       &.opened {
         .header {
-          background-color: var(--astral-primary-color);
-          color: var(--astral-primary-contrast-color);
+          background-color: rgba(var(--astral-primary-color));
+          color: rgba(var(--astral-primary-contrast-color));
         }
       }
       &.stroked {
         .header {
-          border: 1px solid var(--astral-primary-color);
+          border: 1px solid rgba(var(--astral-primary-color));
         }
       }
       .header {
         &:hover {
-          background: var(--astral-primary-color);
-          color: var(--astral-primary-contrast-color);
+          background: rgba(var(--astral-primary-color));
+          color: rgba(var(--astral-primary-contrast-color));
         }
       }
     }
   }
   &[color='secondary'] {
-    &.opened {
-      .header {
-        background-color: var(--astral-secondary-color);
-        color: var(--astral-secondary-contrast-color);
-      }
-    }
     .panel {
+      &.opened {
+        .header {
+          background-color: rgba(var(--astral-secondary-color));
+          color: rgba(var(--astral-secondary-contrast-color));
+        }
+      }
       &.stroked {
         .header {
-          border: 1px solid var(--astral-secondary-color);
+          border: 1px solid rgba(var(--astral-secondary-color));
         }
       }
       .header {
         &:hover {
-          background: var(--astral-secondary-color);
+          background: rgba(var(--astral-secondary-color));
         }
       }
     }
   }
   &[color='success'] {
-    &.opened {
-      .header {
-        background-color: var(--astral-success-color);
-        color: var(--astral-success-contrast-color);
-      }
-    }
     .panel {
+      &.opened {
+        .header {
+          background-color: rgba(var(--astral-success-color));
+          color: rgba(var(--astral-success-contrast-color));
+        }
+      }
       &.stroked {
         .header {
-          border: 1px solid var(--astral-success-color);
+          border: 1px solid rgba(var(--astral-success-color));
         }
       }
       .header {
         &:hover {
-          background: var(--astral-success-color);
+          background: rgba(var(--astral-success-color));
         }
       }
     }
   }
   &[color='warning'] {
-    &.opened {
-      .header {
-        background-color: var(--astral-warning-color);
-        color: var(--astral-warning-contrast-color);
-      }
-    }
     .panel {
+      &.opened {
+        .header {
+          background-color: rgba(var(--astral-warning-color));
+          color: rgba(var(--astral-warning-contrast-color));
+        }
+      }
       &.stroked {
         .header {
-          border: 1px solid var(--astral-warning-color);
+          border: 1px solid rgba(var(--astral-warning-color));
         }
       }
       .header {
         &:hover {
-          background: var(--astral-warning-color);
+          background: rgba(var(--astral-warning-color));
         }
       }
     }

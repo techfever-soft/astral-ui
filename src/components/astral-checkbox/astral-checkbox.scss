@@ -5,6 +5,15 @@ astral-checkbox {
   align-items: center;
   padding: 5px;
 
+  --astral-checkbox-unchecked-background: #fff;
+  --astral-checkbox-checked-background: var(--astral-primary-color);
+  --astral-checkbox-unchecked-border: var(--astral-text-color);
+  --astral-checkbox-checked-border: var(--astral-primary-color);
+  --astral-checkbox-checkmark-color: #fff;
+  --astral-checkbox-size: 20px;
+  --astral-checkbox-transition-duration: 0.3s;
+  --astral-checkbox-border-radius: 4px;
+
   .checkbox-container {
     display: inline-block;
     position: relative;
@@ -60,12 +69,12 @@ astral-checkbox {
   }
 
   .checkbox-primary .checkbox-custom {
-    --astral-checkbox-checked-background: var(--astral-primary-color);
-    --astral-checkbox-checked-border: var(--astral-primary-color);
+    --astral-checkbox-checked-background: rgba(var(--astral-primary-color));
+    --astral-checkbox-checked-border: rgba(var(--astral-primary-color));
 
     @include ripple.surface;
     @include ripple.radius-bounded;
-    @include ripple.states-base-color(var(--astral-primary-color));
+    @include ripple.states-base-color(rgba(var(--astral-primary-color)));
     @include ripple.states-opacities(
       (
         hover: 0.1,
@@ -80,12 +89,12 @@ astral-checkbox {
   }
 
   .checkbox-secondary .checkbox-custom {
-    --astral-checkbox-checked-background: var(--astral-secondary-color);
-    --astral-checkbox-checked-border: var(--astral-secondary-color);
+    --astral-checkbox-checked-background: rgba(var(--astral-secondary-color));
+    --astral-checkbox-checked-border: rgba(var(--astral-secondary-color));
 
     @include ripple.surface;
     @include ripple.radius-bounded;
-    @include ripple.states-base-color(var(--astral-secondary-color));
+    @include ripple.states-base-color(rgba(var(--astral-secondary-color)));
     @include ripple.states-opacities(
       (
         hover: 0.1,
@@ -100,12 +109,12 @@ astral-checkbox {
   }
 
   .checkbox-success .checkbox-custom {
-    --astral-checkbox-checked-background: var(--astral-success-color);
-    --astral-checkbox-checked-border: var(--astral-success-color);
+    --astral-checkbox-checked-background: rgba(var(--astral-success-color));
+    --astral-checkbox-checked-border: rgba(var(--astral-success-color));
 
     @include ripple.surface;
     @include ripple.radius-bounded;
-    @include ripple.states-base-color(var(--astral-success-color));
+    @include ripple.states-base-color(rgba(var(--astral-success-color)));
     @include ripple.states-opacities(
       (
         hover: 0.1,
@@ -120,12 +129,12 @@ astral-checkbox {
   }
 
   .checkbox-warning .checkbox-custom {
-    --astral-checkbox-checked-background: var(--astral-warning-color);
-    --astral-checkbox-checked-border: var(--astral-warning-color);
+    --astral-checkbox-checked-background: rgba(var(--astral-warning-color));
+    --astral-checkbox-checked-border: rgba(var(--astral-warning-color));
 
     @include ripple.surface;
     @include ripple.radius-bounded;
-    @include ripple.states-base-color(var(--astral-warning-color));
+    @include ripple.states-base-color(rgba(var(--astral-warning-color)));
     @include ripple.states-opacities(
       (
         hover: 0.1,

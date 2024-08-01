@@ -1,0 +1,16 @@
+@function hex-to-rgb-map($hex) {
+  $hex: str-slice($hex, 2); // Remove the leading '#'
+  $r: str-slice($hex, 1, 2);
+  $g: str-slice($hex, 3, 4);
+  $b: str-slice($hex, 5, 6);
+  @return (red: hex-value($r), green: hex-value($g), blue: hex-value($b));
+}
+
+@function hex-value($hex-str) {
+  @return (str-index('0123456789ABCDEF', to-upper-case(str-slice($hex-str, 1, 1))) - 1) * 16 + (str-index('0123456789ABCDEF', to-upper-case(str-slice($hex-str, 2, 2))) - 1);
+}
+
+@mixin set-color-variable($hex-color, $variable-name) {
+  $rgb-map: hex-to-rgb-map($hex-color);
+  #{$variable-name}: #{map-get($rgb-map, red)}, #{map-get($rgb-map, green)}, #{map-get($rgb-map, blue)};
+}

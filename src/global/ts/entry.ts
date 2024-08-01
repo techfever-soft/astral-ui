@@ -1,17 +1,10 @@
+import { initCDK } from './cdk';
+
+// import { openModal } from './modal';
+
 document.addEventListener('DOMContentLoaded', () => {
-  const script = document.createElement('script');
-  script.src = '/assets/material-components-web.min.js';
-  script.onload = () => {
-    if ((window as any).mdc) {
-      (window as any).mdc.autoInit();
-    } else {
-      console.error('MDC library is not loaded');
-    }
-  };
+  initCDK();
 
-  const link = document.createElement('link');
-  link.href = '/assets/material-components-web.min.css';
-
-  document.head.appendChild(script);
-  document.head.appendChild(link);
+  // NOTE: Next update
+  // document.getElementById('open-modal-button').addEventListener('click', openModal);
 });

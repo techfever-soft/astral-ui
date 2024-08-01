@@ -17,7 +17,7 @@ astral-button {
     text-transform: uppercase;
     cursor: pointer;
     background: transparent;
-    color: var(--astral-text-color);
+    color: rgba(var(--astral-text-color));
 
     @include ripple.surface;
     @include ripple.radius-bounded;
@@ -31,24 +31,24 @@ astral-button {
     );
 
     &[color='primary'] {
-      background: var(--astral-primary-color);
-      color: var(--astral-primary-contrast-color);
-      @include ripple.states-base-color(var(--astral-primary-contrast-color));
+      background: rgba(var(--astral-primary-color));
+      color: rgba(var(--astral-primary-contrast-color));
+      @include ripple.states-base-color(rgba(var(--astral-primary-contrast-color)));
     }
     &[color='secondary'] {
-      background: var(--astral-secondary-color);
-      color: var(--astral-secondary-contrast-color);
-      @include ripple.states-base-color(var(--astral-secondary-contrast-color));
+      background: rgba(var(--astral-secondary-color));
+      color: rgba(var(--astral-secondary-contrast-color));
+      @include ripple.states-base-color(rgba(var(--astral-secondary-contrast-color)));
     }
     &[color='success'] {
-      background: var(--astral-success-color);
-      color: var(--astral-success-contrast-color);
-      @include ripple.states-base-color(var(--astral-success-contrast-color));
+      background: rgba(var(--astral-success-color));
+      color: rgba(var(--astral-success-contrast-color));
+      @include ripple.states-base-color(rgba(var(--astral-success-contrast-color)));
     }
     &[color='warning'] {
-      background: var(--astral-warning-color);
-      color: var(--astral-warning-contrast-color);
-      @include ripple.states-base-color(var(--astral-warning-contrast-color));
+      background: rgba(var(--astral-warning-color));
+      color: rgba(var(--astral-warning-contrast-color));
+      @include ripple.states-base-color(rgba(var(--astral-warning-contrast-color)));
     }
 
     &[stroked] {
@@ -57,24 +57,24 @@ astral-button {
       color: var(--astral-text-color);
 
       &[color='primary'] {
-        color: var(--astral-primary-color);
-        border: 1px solid var(--astral-primary-color);
-        @include ripple.states-base-color(var(--astral-primary-color));
+        color: rgba(var(--astral-primary-color));
+        border: 1px solid rgba(var(--astral-primary-color));
+        @include ripple.states-base-color(rgba(var(--astral-primary-color)));
       }
       &[color='secondary'] {
-        color: var(--astral-secondary-color);
+        color: rgba(var(--astral-secondary-color));
         border: 1px solid var(--astral-secondary-color);
-        @include ripple.states-base-color(var(--astral-secondary-color));
+        @include ripple.states-base-color(rgba(var(--astral-secondary-color)));
       }
       &[color='success'] {
-        color: var(--astral-success-color);
-        border: 1px solid var(--astral-success-color);
-        @include ripple.states-base-color(var(--astral-success-color));
+        color: rgba(var(--astral-success-color));
+        border: 1px solid rgba(var(--astral-success-color));
+        @include ripple.states-base-color(rgba(var(--astral-success-color)));
       }
       &[color='warning'] {
-        color: var(--astral-warning-color);
-        border: 1px solid var(--astral-warning-color);
-        @include ripple.states-base-color(var(--astral-warning-color));
+        color: rgba(var(--astral-warning-color));
+        border: 1px solid rgba(var(--astral-warning-color));
+        @include ripple.states-base-color(rgba(var(--astral-warning-color)));
       }
     }
 
