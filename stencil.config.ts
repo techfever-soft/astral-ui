@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import gzip from 'rollup-plugin-gzip';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
@@ -8,6 +9,9 @@ export const config: Config = {
   plugins: [
     sass({
       includePaths: ['node_modules'],
+    }),
+    gzip({
+      additionalFiles: ['dist/**/*.js', 'dist/**/*.css'],
     }),
   ],
   outputTargets: [
