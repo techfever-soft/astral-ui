@@ -6,15 +6,15 @@ Following Material Design 3 specs
 
 ![NPM Version](https://img.shields.io/npm/v/%40techfever%2Fastral-ui) ![NPM Downloads](https://img.shields.io/npm/dw/%40techfever%2Fastral-ui)
 
-- Universal
-- Responsive
-- Fully customizable
-- Extensible
-- Supports dark/light mode
+- Universal (web components support any framework)
+- Responsive (adapts to different screen sizes)
+- Fully customizable (change colors, sizes, and other properties)
+- Extensible (easily add new features and components)
+- Supports dark/light mode (switch between themes seamlessly)
 
-#### [CODESANDBOX (SOON)]() 
-#### [CHANGELOG](https://github.com/techfever-soft/astral-ui/blob/main/CHANGELOG.md)
+#### [CODESANDBOX (Angular)](https://codesandbox.io/p/github/techfever-soft/astral-ui-example/main) 
 #### [DEMO & DOCUMENTATION](https://astral-ui.dev)
+#### [CHANGELOG.md](https://github.com/techfever-soft/astral-ui/blob/main/CHANGELOG.md)
 
 ### Components
 
@@ -53,10 +53,12 @@ Use the CSS variables to customize your theme :
 
 ```scss
 // Use the Astral UI SCSS functions to set your own color variables
-@use "../node_modules/@techfever/astral-ui/src/global/scss/functions/rgb" as *;
+@use "../node_modules/@techfever/astral-ui/dist/astralui/scss/functions/rgb.scss"
+  as *;
 
 // Import the Web Components CSS for Ripples
-@import "../node_modules/@techfever/astral-ui/src/assets/material-components-web.min.css";
+@import "../node_modules/@techfever/astral-ui/dist/astralui/assets/material-components-web.min.css";
+
 
 :root {
   --astral-primary-font: "K2D", sans-serif;
@@ -96,7 +98,7 @@ body {
   color: var(--astral-text-color);
 }
 
-// ... Your CSS rules here ...
+// ... Your own CSS rules here ...
 
 ```
 
@@ -106,7 +108,7 @@ Use it directly in your template :
 <astral-button color="primary" stroked>Click me!</astral-button>
 ```
 
-### Dark / Light mode with JS/TS
+### Dynamic dark / light mode
 AstralUI supports dark and light modes. 
 You can put the attribute `data-theme` to "dark" or "light" in the root `html` tag (document.documentElement). 
 

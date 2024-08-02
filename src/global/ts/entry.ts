@@ -5,6 +5,8 @@ import { initCDK } from './cdk';
 document.addEventListener('DOMContentLoaded', () => {
   initCDK();
 
-  // NOTE: Next update
-  // document.getElementById('open-modal-button').addEventListener('click', openModal);
+  // NOTE: FOR TESTING PURPOSES
+  // document.querySelectorAll('[astral-open-modal]').forEach(element => {
+  //   element.addEventListener('click', openModal);
+  // });
 });

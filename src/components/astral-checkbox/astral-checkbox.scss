@@ -46,6 +46,7 @@ astral-checkbox {
     border: 2px solid var(--astral-checkbox-unchecked-border);
     border-radius: var(--astral-checkbox-border-radius);
     transition: background-color var(--astral-checkbox-transition-duration), border-color var(--astral-checkbox-transition-duration);
+    user-select: none;
   }
 
   .checkbox-input:checked ~ .checkbox-custom {

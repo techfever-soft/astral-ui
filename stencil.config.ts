@@ -13,10 +13,14 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: './loader',
+      esmLoaderPath: '../loader',
       copy: [
         {
           src: 'assets',
+        },
+        {
+          src: 'global/scss',
+          dest: 'scss',
         },
       ],
     },
@@ -34,6 +38,10 @@ export const config: Config = {
       copy: [
         {
           src: 'assets',
+        },
+        {
+          src: 'global/scss',
+          dest: 'scss',
         },
       ],
     },

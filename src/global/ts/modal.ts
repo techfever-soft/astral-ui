@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 
+// TODO: Gest the modal content from the user
 export const openModal = () => {
   const modal = document.createElement('astral-modal');
   modal.innerHTML = `
