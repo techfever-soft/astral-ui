@@ -17,6 +17,7 @@ export class AstralButton {
   @Prop() extendedfab: boolean = false;
   @Prop() stroked: boolean = false;
   @Prop() disabled: boolean = false;
+  @Prop() icon: boolean = false;
 
   componentDidLoad() {
     const button = this.el.querySelector('button') as HTMLElement;
@@ -38,6 +39,9 @@ export class AstralButton {
       }
       if (this.stroked) {
         button.setAttribute('stroked', '');
+      }
+      if (this.icon) {
+        button.setAttribute('icon', '');
       }
     }
   }

@@ -23,7 +23,7 @@ Following Material Design 3 specs
 - [x] Accordions
 - [x] Breadcrumbs
 - [x] Checkboxes
-- [ ] Modals
+- [x] Modals
 - [ ] More components coming soon...
 
 See [ROADMAP.md](https://github.com/techfever-soft/astral-ui/blob/main/ROADMAP.md) for more components

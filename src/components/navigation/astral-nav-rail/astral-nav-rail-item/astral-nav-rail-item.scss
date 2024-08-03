@@ -1,0 +1,15 @@
+astral-nav-rail-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  .astral-nav-rail-item {
+    display: flex;
+    flex-direction: column;
+  }
+}

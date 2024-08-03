@@ -1,16 +1,12 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
-import { AstralThemeColor } from '../../components';
-
 @Component({
   tag: 'astral-icon',
   styleUrl: 'astral-icon.scss',
-  shadow: true,
+  shadow: false,
 })
 export class AstralIcon {
   @Prop() name: string;
-  @Prop() size: string;
-  @Prop() color: AstralThemeColor;
   @Prop() fontSet: 'material' | 'font-awesome' = 'material';
 
   render() {

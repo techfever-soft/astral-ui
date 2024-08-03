@@ -37,6 +37,7 @@ export namespace Components {
         "disabled": boolean;
         "extendedfab": boolean;
         "fab": boolean;
+        "icon": boolean;
         "raised": boolean;
         "stroked": boolean;
     }
@@ -48,13 +49,25 @@ export namespace Components {
     interface AstralDivider {
     }
     interface AstralIcon {
-        "color": AstralThemeColor1;
         "fontSet": 'material' | 'font-awesome';
         "name": string;
-        "size": string;
     }
     interface AstralModal {
-        "modalTitle": string;
+        "close": () => Promise<void>;
+        "modalId": string;
+        "open": () => Promise<void>;
+    }
+    interface AstralNavBar {
+    }
+    interface AstralNavDrawer {
+    }
+    interface AstralNavRail {
+        "color": string;
+    }
+    interface AstralNavRailItem {
+        "fontSet": 'material' | 'font-awesome';
+        "icon": string;
+        "label": string;
     }
     interface AstralPane {
         "raised": boolean;
@@ -116,6 +129,30 @@ declare global {
         prototype: HTMLAstralModalElement;
         new (): HTMLAstralModalElement;
     };
+    interface HTMLAstralNavBarElement extends Components.AstralNavBar, HTMLStencilElement {
+    }
+    var HTMLAstralNavBarElement: {
+        prototype: HTMLAstralNavBarElement;
+        new (): HTMLAstralNavBarElement;
+    };
+    interface HTMLAstralNavDrawerElement extends Components.AstralNavDrawer, HTMLStencilElement {
+    }
+    var HTMLAstralNavDrawerElement: {
+        prototype: HTMLAstralNavDrawerElement;
+        new (): HTMLAstralNavDrawerElement;
+    };
+    interface HTMLAstralNavRailElement extends Components.AstralNavRail, HTMLStencilElement {
+    }
+    var HTMLAstralNavRailElement: {
+        prototype: HTMLAstralNavRailElement;
+        new (): HTMLAstralNavRailElement;
+    };
+    interface HTMLAstralNavRailItemElement extends Components.AstralNavRailItem, HTMLStencilElement {
+    }
+    var HTMLAstralNavRailItemElement: {
+        prototype: HTMLAstralNavRailItemElement;
+        new (): HTMLAstralNavRailItemElement;
+    };
     interface HTMLAstralPaneElement extends Components.AstralPane, HTMLStencilElement {
     }
     var HTMLAstralPaneElement: {
@@ -132,6 +169,10 @@ declare global {
         "astral-divider": HTMLAstralDividerElement;
         "astral-icon": HTMLAstralIconElement;
         "astral-modal": HTMLAstralModalElement;
+        "astral-nav-bar": HTMLAstralNavBarElement;
+        "astral-nav-drawer": HTMLAstralNavDrawerElement;
+        "astral-nav-rail": HTMLAstralNavRailElement;
+        "astral-nav-rail-item": HTMLAstralNavRailItemElement;
         "astral-pane": HTMLAstralPaneElement;
     }
 }
@@ -163,6 +204,7 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "extendedfab"?: boolean;
         "fab"?: boolean;
+        "icon"?: boolean;
         "raised"?: boolean;
         "stroked"?: boolean;
     }
@@ -174,13 +216,23 @@ declare namespace LocalJSX {
     interface AstralDivider {
     }
     interface AstralIcon {
-        "color"?: AstralThemeColor1;
         "fontSet"?: 'material' | 'font-awesome';
         "name"?: string;
-        "size"?: string;
     }
     interface AstralModal {
-        "modalTitle"?: string;
+        "modalId"?: string;
+    }
+    interface AstralNavBar {
+    }
+    interface AstralNavDrawer {
+    }
+    interface AstralNavRail {
+        "color"?: string;
+    }
+    interface AstralNavRailItem {
+        "fontSet"?: 'material' | 'font-awesome';
+        "icon"?: string;
+        "label"?: string;
     }
     interface AstralPane {
         "raised"?: boolean;
@@ -196,6 +248,10 @@ declare namespace LocalJSX {
         "astral-divider": AstralDivider;
         "astral-icon": AstralIcon;
         "astral-modal": AstralModal;
+        "astral-nav-bar": AstralNavBar;
+        "astral-nav-drawer": AstralNavDrawer;
+        "astral-nav-rail": AstralNavRail;
+        "astral-nav-rail-item": AstralNavRailItem;
         "astral-pane": AstralPane;
     }
 }
@@ -212,6 +268,10 @@ declare module "@stencil/core" {
             "astral-divider": LocalJSX.AstralDivider & JSXBase.HTMLAttributes<HTMLAstralDividerElement>;
             "astral-icon": LocalJSX.AstralIcon & JSXBase.HTMLAttributes<HTMLAstralIconElement>;
             "astral-modal": LocalJSX.AstralModal & JSXBase.HTMLAttributes<HTMLAstralModalElement>;
+            "astral-nav-bar": LocalJSX.AstralNavBar & JSXBase.HTMLAttributes<HTMLAstralNavBarElement>;
+            "astral-nav-drawer": LocalJSX.AstralNavDrawer & JSXBase.HTMLAttributes<HTMLAstralNavDrawerElement>;
+            "astral-nav-rail": LocalJSX.AstralNavRail & JSXBase.HTMLAttributes<HTMLAstralNavRailElement>;
+            "astral-nav-rail-item": LocalJSX.AstralNavRailItem & JSXBase.HTMLAttributes<HTMLAstralNavRailItemElement>;
             "astral-pane": LocalJSX.AstralPane & JSXBase.HTMLAttributes<HTMLAstralPaneElement>;
         }
     }

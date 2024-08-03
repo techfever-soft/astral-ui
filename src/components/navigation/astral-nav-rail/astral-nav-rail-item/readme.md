@@ -1,4 +1,4 @@
-# astral-icon
+# astral-nav-rail-item
 
 
 
@@ -10,20 +10,21 @@
 | Property  | Attribute  | Description | Type                           | Default      |
 | --------- | ---------- | ----------- | ------------------------------ | ------------ |
 | `fontSet` | `font-set` |             | `"font-awesome" \| "material"` | `'material'` |
-| `name`    | `name`     |             | `string`                       | `undefined`  |
+| `icon`    | `icon`     |             | `string`                       | `undefined`  |
+| `label`   | `label`    |             | `string`                       | `undefined`  |
 
 
 ## Dependencies
 
-### Used by
+### Depends on
 
- - [astral-nav-rail-item](../navigation/astral-nav-rail/astral-nav-rail-item)
+- [astral-icon](../../../astral-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   astral-nav-rail-item --> astral-icon
-  style astral-icon fill:#f9f,stroke:#333,stroke-width:4px
+  style astral-nav-rail-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

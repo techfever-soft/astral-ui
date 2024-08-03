@@ -4,6 +4,13 @@
 
 Following Material Design 3 specs
 
+### Version 0.0.7
+- Gzipped dist files
+- Added icon button
+- Added components
+  - Icon
+  - Modals
+
 ### Version 0.0.6
 - Prevented icon selection from astral-checkboxes
 - Patched README & documentation

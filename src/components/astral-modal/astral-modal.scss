@@ -3,10 +3,21 @@ astral-modal {
   height: 100%;
   width: 100%;
   top: 0;
-  background: rgba(var(--astral-text-color), 0.65);
   display: flex;
   justify-content: center;
-  .astral-modal-container {
+  align-items: center;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--astral-text-color);
+    opacity: 0.65;
+    position: absolute;
+    z-index: -1;
+  }
+
+  div[slot='container'] {
     justify-self: center;
     align-self: center;
     display: block;
