@@ -1,279 +1,290 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-    rel="stylesheet" />
+    <link rel="stylesheet" href="/build/astralui.css" />
+    <script type="module" src="/build/astralui.esm.js"></script>
+    <script nomodule src="/build/astralui.js"></script>
 
-  <link rel="stylesheet" href="/build/astralui.css" />
-  <script type="module" src="/build/astralui.esm.js"></script>
-  <script nomodule src="/build/astralui.js"></script>
-
-  <style>
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    p {
-      margin: 0;
-    }
-
-    body {
-      color: var(--astral-text-color);
-      background: var(--astral-background-color);
-    }
-
-    fieldset {
-      margin-bottom: 15px;
-    }
-
-    fieldset legend {
-      padding: 0 10px;
-      font-family: var(--astral-primary-font);
-    }
-
-    .flex-container {
-      display: flex;
-    }
-
-    .flex-container.column {
-      flex-direction: column;
-    }
-  </style>
-</head>
-
-<body>
-  <astral-button id="toggle-theme-button">
-    <i class="material-icons">light_mode</i>
-    <span id="toggle-theme-button-text">Toggle light mode</span>
-  </astral-button>
-
-  <script>
-    const toggleThemeButton = document.body.querySelector('#toggle-theme-button');
-    const icon = toggleThemeButton.querySelector('i');
-    const buttonText = toggleThemeButton.querySelector('#toggle-theme-button-text');
-
-    const isDarkTheme = () => document.documentElement.getAttribute('data-theme') === 'dark';
-
-    const updateThemeUI = () => {
-      if (isDarkTheme()) {
-        icon.innerText = 'light_mode';
-        buttonText.innerText = 'Toggle light mode';
-      } else {
-        icon.innerText = 'dark_mode';
-        buttonText.innerText = 'Toggle dark mode';
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p {
+        margin: 0;
       }
-    };
 
-    updateThemeUI();
-
-    toggleThemeButton.addEventListener('click', () => {
-      if (isDarkTheme()) {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
+      body {
+        color: var(--astral-text-color);
+        background: var(--astral-background-color);
       }
+
+      fieldset {
+        margin-bottom: 15px;
+      }
+
+      fieldset legend {
+        padding: 0 10px;
+        font-family: var(--astral-primary-font);
+      }
+
+      .flex-container {
+        display: flex;
+      }
+
+      .flex-container.column {
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+  <body>
+    <astral-button id="toggle-theme-button">
+      <i class="material-icons">light_mode</i>
+      <span id="toggle-theme-button-text">Toggle light mode</span>
+    </astral-button>
+
+    <script>
+      const toggleThemeButton = document.body.querySelector('#toggle-theme-button');
+      const icon = toggleThemeButton.querySelector('i');
+      const buttonText = toggleThemeButton.querySelector('#toggle-theme-button-text');
+
+      const isDarkTheme = () => document.documentElement.getAttribute('data-theme') === 'dark';
+
+      const updateThemeUI = () => {
+        if (isDarkTheme()) {
+          icon.innerText = 'light_mode';
+          buttonText.innerText = 'Toggle light mode';
+        } else {
+          icon.innerText = 'dark_mode';
+          buttonText.innerText = 'Toggle dark mode';
+        }
+      };
+
       updateThemeUI();
-    });
 
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
+      toggleThemeButton.addEventListener('click', () => {
+        if (isDarkTheme()) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        updateThemeUI();
+      });
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      if (event.matches) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.setAttribute('data-theme', 'dark');
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
       }
-    });
-  </script>
 
-  <fieldset>
-    <legend>Buttons</legend>
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      });
+    </script>
 
-    <div class="flex-container column">
-      <astral-button color="transparent">Transparent</astral-button>
-      <astral-button color="primary">Primary</astral-button>
-      <astral-button color="secondary">Secondary</astral-button>
-      <astral-button color="success">Success</astral-button>
-      <astral-button color="warning">Warning</astral-button>
-      <astral-button raised>Raised</astral-button>
-      <astral-button stroked>Stroked</astral-button>
-      <astral-button disabled>Disabled</astral-button>
-      <astral-button icon>
-        <i class="material-icons">favorite</i>
+    <fieldset>
+      <legend>Buttons</legend>
+
+      <div class="flex-container column">
+        <astral-button color="transparent">Transparent</astral-button>
+        <astral-button color="primary">Primary</astral-button>
+        <astral-button color="secondary">Secondary</astral-button>
+        <astral-button color="success">Success</astral-button>
+        <astral-button color="warning">Warning</astral-button>
+        <astral-button raised>Raised</astral-button>
+        <astral-button stroked>Stroked</astral-button>
+        <astral-button disabled>Disabled</astral-button>
+        <astral-button icon>
+          <i class="material-icons">favorite</i>
+        </astral-button>
+        <astral-button fab color="primary">
+          <i class="material-icons">menu</i>
+        </astral-button>
+        <astral-button extendedfab raised color="secondary">
+          <i class="material-icons">menu_open</i>
+          Extended fab
+        </astral-button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Panes</legend>
+
+      <astral-pane>
+        <h1 slot="title">Default pane title</h1>
+        <p slot="content">This is a pane content</p>
+      </astral-pane>
+
+      <astral-pane raised>
+        <h2 slot="title">Raised pane title</h2>
+        <p slot="content">This is a pane content</p>
+      </astral-pane>
+
+      <astral-pane stroked>
+        <h3 slot="title">Stroked pane title</h3>
+        <p slot="content">This is a pane content</p>
+      </astral-pane>
+    </fieldset>
+
+    <fieldset>
+      <legend>Accordions</legend>
+
+      <astral-accordion color="primary">
+        <astral-accordion-panel>
+          <div slot="header">Transparent panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel raised>
+          <div slot="header">Raised panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel stroked>
+          <div slot="header">Stroked panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+      </astral-accordion>
+
+      <astral-accordion color="secondary">
+        <astral-accordion-panel>
+          <div slot="header">Transparent panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel raised>
+          <div slot="header">Raised panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+        <astral-accordion-panel stroked>
+          <div slot="header">Stroked panel</div>
+          <div slot="content">
+            <p>This is the content for panel</p>
+          </div>
+        </astral-accordion-panel>
+      </astral-accordion>
+    </fieldset>
+
+    <fieldset>
+      <legend>Breadcrumbs</legend>
+
+      <astral-breadcrumb color="primary">
+        <span slot="separator"> / </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+
+      <br />
+
+      <astral-breadcrumb color="secondary">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+
+      <br />
+
+      <astral-breadcrumb color="success">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+
+      <br />
+
+      <astral-breadcrumb color="warning">
+        <span slot="separator"> &gt; </span>
+        <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
+        <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
+        <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
+      </astral-breadcrumb>
+    </fieldset>
+
+    <fieldset>
+      <legend>Checkboxes</legend>
+
+      <astral-checkbox color="primary" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="secondary" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="success" checked>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="warning" checked>Label for checkbox</astral-checkbox>
+      <br />
+      <astral-checkbox color="primary" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="secondary" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="success" checked indeterminate>Label for checkbox</astral-checkbox>
+      <astral-checkbox color="warning" checked indeterminate>Label for checkbox</astral-checkbox>
+    </fieldset>
+
+    <fieldset>
+      <legend>Dividers</legend>
+
+      <astral-divider></astral-divider>
+      <br />
+      <astral-divider vertical></astral-divider>
+    </fieldset>
+
+    <fieldset>
+      <legend>Icons</legend>
+
+      <astral-icon name="category"></astral-icon>
+    </fieldset>
+
+    <fieldset>
+      <legend>Modals</legend>
+
+      <astral-button astral-open-modal data-modal-id="1">
+        <i class="material-icons">open_in_new</i>
+        <span>Open modal</span>
       </astral-button>
-      <astral-button fab color="primary">
-        <i class="material-icons">menu</i>
+
+      <astral-button color="primary" astral-open-modal data-modal-id="2">
+        <i class="material-icons">open_in_new</i>
+        <span>Open modal</span>
       </astral-button>
-      <astral-button extendedfab raised color="secondary">
-        <i class="material-icons">menu_open</i>
-        Extended fab
-      </astral-button>
-    </div>
-  </fieldset>
+    </fieldset>
 
-  <fieldset>
-    <legend>Panes</legend>
+    <fieldset>
+      <legend>Grid</legend>
+      <astral-grid columns="3" justify="space-between" align="center" spacing="24px">
+        <astral-grid-item>
+          <p>Lorem ipsum</p>
+        </astral-grid-item>
+        <astral-grid-item>
+          <p>Lorem</p>
+        </astral-grid-item>
+        <astral-grid-item>
+          <p>Item 3</p>
+        </astral-grid-item>
+      </astral-grid>
+    </fieldset>
 
-    <astral-pane>
-      <h1 slot="title">Default pane title</h1>
-      <p slot="content">This is a pane content</p>
-    </astral-pane>
-
-    <astral-pane raised>
-      <h2 slot="title">Raised pane title</h2>
-      <p slot="content">This is a pane content</p>
-    </astral-pane>
-
-    <astral-pane stroked>
-      <h3 slot="title">Stroked pane title</h3>
-      <p slot="content">This is a pane content</p>
-    </astral-pane>
-  </fieldset>
-
-  <fieldset>
-    <legend>Accordions</legend>
-
-    <astral-accordion color="primary">
-      <astral-accordion-panel>
-        <div slot="header">Transparent panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-      <astral-accordion-panel raised>
-        <div slot="header">Raised panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-      <astral-accordion-panel stroked>
-        <div slot="header">Stroked panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-    </astral-accordion>
-
-    <astral-accordion color="secondary">
-      <astral-accordion-panel>
-        <div slot="header">Transparent panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-      <astral-accordion-panel raised>
-        <div slot="header">Raised panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-      <astral-accordion-panel stroked>
-        <div slot="header">Stroked panel</div>
-        <div slot="content">
-          <p>This is the content for panel</p>
-        </div>
-      </astral-accordion-panel>
-    </astral-accordion>
-  </fieldset>
-
-  <fieldset>
-    <legend>Breadcrumbs</legend>
-
-    <astral-breadcrumb color="primary">
-      <span slot="separator"> / </span>
-      <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
-      <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
-      <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
-    </astral-breadcrumb>
-
-    <br />
-
-    <astral-breadcrumb color="secondary">
-      <span slot="separator"> &gt; </span>
-      <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
-      <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
-      <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
-    </astral-breadcrumb>
-
-    <br />
-
-    <astral-breadcrumb color="success">
-      <span slot="separator"> &gt; </span>
-      <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
-      <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
-      <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
-    </astral-breadcrumb>
-
-    <br />
-
-    <astral-breadcrumb color="warning">
-      <span slot="separator"> &gt; </span>
-      <astral-breadcrumb-item active> Active page </astral-breadcrumb-item>
-      <astral-breadcrumb-item> Page 2 </astral-breadcrumb-item>
-      <astral-breadcrumb-item disabled> Page 3 </astral-breadcrumb-item>
-    </astral-breadcrumb>
-  </fieldset>
-
-  <fieldset>
-    <legend>Checkboxes</legend>
-
-    <astral-checkbox color="primary" checked>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="secondary" checked>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="success" checked>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="warning" checked>Label for checkbox</astral-checkbox>
-    <br />
-    <astral-checkbox color="primary" checked indeterminate>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="secondary" checked indeterminate>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="success" checked indeterminate>Label for checkbox</astral-checkbox>
-    <astral-checkbox color="warning" checked indeterminate>Label for checkbox</astral-checkbox>
-  </fieldset>
-
-  <fieldset>
-    <legend>Dividers</legend>
-
-    <astral-divider></astral-divider>
-    <br />
-    <astral-divider vertical></astral-divider>
-  </fieldset>
-
-  <fieldset>
-    <legend>Icons</legend>
-
-    <astral-icon name="category"></astral-icon>
-  </fieldset>
-
-  <fieldset>
-    <legend>Modals</legend>
-
-    <astral-button astral-open-modal data-modal-id="1">
-      <i class="material-icons">open_in_new</i>
-      <span>Open modal</span>
-    </astral-button>
-
-    <astral-button color="primary" astral-open-modal data-modal-id="2">
-      <i class="material-icons">open_in_new</i>
-      <span>Open modal</span>
-    </astral-button>
-
-  </fieldset>
-
-
-  <!-- 
+    <!-- 
     TODO - Continue styling navigation rail
     <fieldset>
     <legend>Navigation rail</legend>
@@ -287,6 +298,5 @@
       <astral-nav-rail-item icon="settings" fontSet="material" label="Settings"></astral-nav-rail-item>
     </astral-nav-rail>
   </fieldset> -->
-</body>
-
+  </body>
 </html>

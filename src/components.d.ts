@@ -46,11 +46,36 @@ export namespace Components {
         "color": AstralThemeColor1;
         "indeterminate": boolean;
     }
+    interface AstralContainer {
+        "align": 'start' | 'center' | 'end';
+        "direction": 'row' | 'column';
+        "justify": 'start' | 'center' | 'space-between' | 'space-around';
+        "padding": string;
+        "spacing": string;
+        "wrap": 'nowrap' | 'wrap';
+    }
     interface AstralDivider {
+    }
+    interface AstralGrid {
+        "align": 'start' | 'center' | 'end';
+        "columns": number;
+        "direction": 'row' | 'column';
+        "justify": 'start' | 'center' | 'space-between' | 'space-around';
+        "spacing": string;
+    }
+    interface AstralGridItem {
     }
     interface AstralIcon {
         "fontSet": 'material' | 'font-awesome';
         "name": string;
+    }
+    interface AstralItem {
+        "basis": string;
+        "flex": string;
+        "grow": number;
+        "shrink": number;
+    }
+    interface AstralLayout {
     }
     interface AstralModal {
         "close": () => Promise<void>;
@@ -111,17 +136,47 @@ declare global {
         prototype: HTMLAstralCheckboxElement;
         new (): HTMLAstralCheckboxElement;
     };
+    interface HTMLAstralContainerElement extends Components.AstralContainer, HTMLStencilElement {
+    }
+    var HTMLAstralContainerElement: {
+        prototype: HTMLAstralContainerElement;
+        new (): HTMLAstralContainerElement;
+    };
     interface HTMLAstralDividerElement extends Components.AstralDivider, HTMLStencilElement {
     }
     var HTMLAstralDividerElement: {
         prototype: HTMLAstralDividerElement;
         new (): HTMLAstralDividerElement;
     };
+    interface HTMLAstralGridElement extends Components.AstralGrid, HTMLStencilElement {
+    }
+    var HTMLAstralGridElement: {
+        prototype: HTMLAstralGridElement;
+        new (): HTMLAstralGridElement;
+    };
+    interface HTMLAstralGridItemElement extends Components.AstralGridItem, HTMLStencilElement {
+    }
+    var HTMLAstralGridItemElement: {
+        prototype: HTMLAstralGridItemElement;
+        new (): HTMLAstralGridItemElement;
+    };
     interface HTMLAstralIconElement extends Components.AstralIcon, HTMLStencilElement {
     }
     var HTMLAstralIconElement: {
         prototype: HTMLAstralIconElement;
         new (): HTMLAstralIconElement;
+    };
+    interface HTMLAstralItemElement extends Components.AstralItem, HTMLStencilElement {
+    }
+    var HTMLAstralItemElement: {
+        prototype: HTMLAstralItemElement;
+        new (): HTMLAstralItemElement;
+    };
+    interface HTMLAstralLayoutElement extends Components.AstralLayout, HTMLStencilElement {
+    }
+    var HTMLAstralLayoutElement: {
+        prototype: HTMLAstralLayoutElement;
+        new (): HTMLAstralLayoutElement;
     };
     interface HTMLAstralModalElement extends Components.AstralModal, HTMLStencilElement {
     }
@@ -166,8 +221,13 @@ declare global {
         "astral-breadcrumb-item": HTMLAstralBreadcrumbItemElement;
         "astral-button": HTMLAstralButtonElement;
         "astral-checkbox": HTMLAstralCheckboxElement;
+        "astral-container": HTMLAstralContainerElement;
         "astral-divider": HTMLAstralDividerElement;
+        "astral-grid": HTMLAstralGridElement;
+        "astral-grid-item": HTMLAstralGridItemElement;
         "astral-icon": HTMLAstralIconElement;
+        "astral-item": HTMLAstralItemElement;
+        "astral-layout": HTMLAstralLayoutElement;
         "astral-modal": HTMLAstralModalElement;
         "astral-nav-bar": HTMLAstralNavBarElement;
         "astral-nav-drawer": HTMLAstralNavDrawerElement;
@@ -213,11 +273,36 @@ declare namespace LocalJSX {
         "color"?: AstralThemeColor1;
         "indeterminate"?: boolean;
     }
+    interface AstralContainer {
+        "align"?: 'start' | 'center' | 'end';
+        "direction"?: 'row' | 'column';
+        "justify"?: 'start' | 'center' | 'space-between' | 'space-around';
+        "padding"?: string;
+        "spacing"?: string;
+        "wrap"?: 'nowrap' | 'wrap';
+    }
     interface AstralDivider {
+    }
+    interface AstralGrid {
+        "align"?: 'start' | 'center' | 'end';
+        "columns"?: number;
+        "direction"?: 'row' | 'column';
+        "justify"?: 'start' | 'center' | 'space-between' | 'space-around';
+        "spacing"?: string;
+    }
+    interface AstralGridItem {
     }
     interface AstralIcon {
         "fontSet"?: 'material' | 'font-awesome';
         "name"?: string;
+    }
+    interface AstralItem {
+        "basis"?: string;
+        "flex"?: string;
+        "grow"?: number;
+        "shrink"?: number;
+    }
+    interface AstralLayout {
     }
     interface AstralModal {
         "modalId"?: string;
@@ -245,8 +330,13 @@ declare namespace LocalJSX {
         "astral-breadcrumb-item": AstralBreadcrumbItem;
         "astral-button": AstralButton;
         "astral-checkbox": AstralCheckbox;
+        "astral-container": AstralContainer;
         "astral-divider": AstralDivider;
+        "astral-grid": AstralGrid;
+        "astral-grid-item": AstralGridItem;
         "astral-icon": AstralIcon;
+        "astral-item": AstralItem;
+        "astral-layout": AstralLayout;
         "astral-modal": AstralModal;
         "astral-nav-bar": AstralNavBar;
         "astral-nav-drawer": AstralNavDrawer;
@@ -265,8 +355,13 @@ declare module "@stencil/core" {
             "astral-breadcrumb-item": LocalJSX.AstralBreadcrumbItem & JSXBase.HTMLAttributes<HTMLAstralBreadcrumbItemElement>;
             "astral-button": LocalJSX.AstralButton & JSXBase.HTMLAttributes<HTMLAstralButtonElement>;
             "astral-checkbox": LocalJSX.AstralCheckbox & JSXBase.HTMLAttributes<HTMLAstralCheckboxElement>;
+            "astral-container": LocalJSX.AstralContainer & JSXBase.HTMLAttributes<HTMLAstralContainerElement>;
             "astral-divider": LocalJSX.AstralDivider & JSXBase.HTMLAttributes<HTMLAstralDividerElement>;
+            "astral-grid": LocalJSX.AstralGrid & JSXBase.HTMLAttributes<HTMLAstralGridElement>;
+            "astral-grid-item": LocalJSX.AstralGridItem & JSXBase.HTMLAttributes<HTMLAstralGridItemElement>;
             "astral-icon": LocalJSX.AstralIcon & JSXBase.HTMLAttributes<HTMLAstralIconElement>;
+            "astral-item": LocalJSX.AstralItem & JSXBase.HTMLAttributes<HTMLAstralItemElement>;
+            "astral-layout": LocalJSX.AstralLayout & JSXBase.HTMLAttributes<HTMLAstralLayoutElement>;
             "astral-modal": LocalJSX.AstralModal & JSXBase.HTMLAttributes<HTMLAstralModalElement>;
             "astral-nav-bar": LocalJSX.AstralNavBar & JSXBase.HTMLAttributes<HTMLAstralNavBarElement>;
             "astral-nav-drawer": LocalJSX.AstralNavDrawer & JSXBase.HTMLAttributes<HTMLAstralNavDrawerElement>;

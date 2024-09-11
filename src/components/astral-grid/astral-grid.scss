@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+astral-grid {
+  .grid {
+    display: flex;
+    flex-direction: var(--direction, row);
+    flex-wrap: var(--wrap, wrap);
+    justify-content: var(--justify, flex-start);
+    align-items: var(--align, stretch);
+    gap: var(--spacing, 16px);
+  }
+}
